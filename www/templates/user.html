@@ -1,0 +1,132 @@
+<ion-view view-title="User">
+  <ion-content padding="true">
+    <h4 style="text-align:center;">AddMe Profile</h4>
+    <div class="button-bar">
+      <button type="button" class="button button-outline button-icon icon ion-social-twitter" ng-click="twitterOAuth()"></button>
+      <button type="button" class="button button-outline button-icon icon ion-social-github" ng-click="githubOAuth()"></button>
+
+    </div>
+    <div class="list card">
+      <div class="item item-divider">
+        Name
+      </div>
+      <div class="item item-avatar item-button-right">
+        <img src="css/img/avatar.png">
+        <h2>{{user.name.value.fname}}
+          {{user.name.value.lname}}</h2>
+        <p>AddMe Profile Settings</p>
+        <button type="button" class="button button-outline button-positive" ng-click="createQR()">show QR</button>
+
+      </div>
+      <div class="item range range-positive" ng-show="generatedQR !== ''">
+        <i class="icon ion-minus"></i>
+        <input type="range" name="qrsize" ng-model="qrsize" min="200" max="600">
+        <i class="icon ion-plus"></i>
+      </div>
+      <div class="item item-image padding" ng-show="generatedQR !== ''">
+        <qr type-number="16" correction-level="'M'" size="qrsize" text="generatedQR" image="false"></qr>
+      </div>
+
+      <div class="item item-stable item-toggle">
+        <span class="item-divider">Address</span>
+        <label class="toggle toggle-positive">
+          <input type="checkbox" ng-model="user.address.include">
+          <div class="track">
+            <div class="handle"></div>
+          </div>
+        </label>
+      </div>
+
+      <p class="item item-icon-left">
+        <i class="icon ion-home"></i>
+        {{user.address.value.street}}
+        {{user.address.value.no}}
+        <br>
+        {{user.address.value.zip}}
+        {{user.address.value.city}}
+        <br>
+        {{user.address.value.country}}
+      </p>
+
+      <div class="item item-divider">
+        Phone &amp; Email
+      </div>
+
+      <div class="item item-toggle item-icon-left">
+        <i class="icon ion-ios-telephone"></i>
+        {{user.tel.value}}
+        <span class="item-note">
+          Home
+        </span>
+        <label class="toggle toggle-positive">
+          <input type="checkbox" ng-model="user.tel.include">
+          <div class="track">
+            <div class="handle"></div>
+          </div>
+        </label>
+      </div>
+
+      <div class="item item-toggle item-icon-left">
+        <i class="icon ion-android-phone-portrait"></i>
+        {{user.mobile.value}}
+        <span class="item-note">
+          Mobile
+        </span>
+        <label class="toggle toggle-positive">
+          <input type="checkbox" ng-model="user.mobile.include">
+          <div class="track">
+            <div class="handle"></div>
+          </div>
+        </label>
+      </div>
+
+      <div class="item item-toggle item-icon-left">
+        <i class="icon ion-email"></i>
+        {{user.email.value}}
+        <label class="toggle toggle-positive">
+          <input type="checkbox" ng-model="user.email.include">
+          <div class="track">
+            <div class="handle"></div>
+          </div>
+        </label>
+      </div>
+
+      <div class="item item-divider">
+        Social
+      </div>
+
+      <div class="item item-toggle item-icon-left">
+        <i class="icon ion-social-twitter calm"></i>
+        @{{user.twitter.value}}
+        <label class="toggle toggle-positive">
+          <input type="checkbox" ng-model="user.twitter.include">
+          <div class="track">
+            <div class="handle"></div>
+          </div>
+        </label>
+      </div>
+
+      <div class="item item-toggle item-icon-left">
+        <i class="icon ion-social-github"></i>
+        {{user.github.value}}
+        <label class="toggle toggle-positive">
+          <input type="checkbox" ng-model="user.github.include">
+          <div class="track">
+            <div class="handle"></div>
+          </div>
+        </label>
+      </div>
+      <div class="item item-toggle item-icon-left">
+        <i class="icon ion-social-reddit"></i>
+        {{user.reddit.value}}
+        <label class="toggle toggle-positive">
+          <input type="checkbox" ng-model="user.reddit.include">
+          <div class="track">
+            <div class="handle"></div>
+          </div>
+        </label>
+      </div>
+    </div>
+    <a class="button button-block button-outline button-balanced" href="#/app/edit">Edit</a>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,84 @@
+<ion-view view-title="QR">
+  <ion-content padding="true">
+    <h1 style="text-align:center;">Scan</h1>
+    <button type="button" class="button button-positive button-block icon-right ion-ios-barcode-outline" ng-click="scanQR()">QR-Scan</button>
+    <div class="list card"  ng-show="newContact">
+      <div class="item item-divider" ng-show="newContact">
+        Name
+      </div>
+      <div class="item item-avatar" ng-show="newContact">
+        <img src="css/img/avatar.png">
+        <h2>{{newContact.name.fname}}
+          {{newContact.name.lname}}</h2>
+      </div>
+
+      <div class="item item-stable" ng-show="newContact.address">
+        <span class="item-divider">Address</span>
+
+      </div>
+
+      <p class="item item-icon-left" ng-show="newContact.address">
+        <i class="icon ion-home"></i>
+        {{newContact.address.street}}
+        {{newContact.address.no}}
+        <br>
+        {{newContact.address.zip}}
+        {{newContact.address.city}}
+        <br>
+        {{newContact.address.country}}
+      </p>
+
+      <div class="item item-divider" ng-show="newContact.phone || newContact.mobile|| newContact.email">
+        Phone &amp; Email
+      </div>
+
+      <div class="item item-icon-left" ng-show="newContact.tel">
+        <i class="icon ion-ios-telephone"></i>
+        {{newContact.tel}}
+        <span class="item-note">
+          Home
+        </span>
+
+      </div>
+
+      <div class="item item-icon-left" ng-show="newContact.mobile">
+        <i class="icon ion-android-phone-portrait"></i>
+        {{newContact.mobile}}
+        <span class="item-note">
+          Mobile
+        </span>
+
+      </div>
+
+      <div class="item item-icon-left" ng-show="newContact.email">
+        <i class="icon ion-email"></i>
+        {{newContact.email}}
+
+      </div>
+
+      <div class="item item-divider" ng-show="newContact.twitter || newContact.github|| newContact.reddit">
+        Social
+      </div>
+
+      <div class="item item-icon-left" ng-show="newContact.twitter">
+        <i class="icon ion-social-twitter calm"></i>
+        @{{newContact.twitter}}
+
+      </div>
+
+      <div class="item item-icon-left" ng-show="newContact.github">
+        <i class="icon ion-social-github"></i>
+        {{newContact.github}}
+
+      </div>
+      <div class="item item-icon-left" ng-show="newContact.reddit">
+        <i class="icon ion-social-reddit"></i>
+        {{newContact.reddit}}
+      </div>
+    </div>
+
+    <button class="button button-block button-balanced" ng-show="newContact" ng-click="saveContact()">
+      Save Contact
+    </button>
+    </ion-content>
+  </ion-view>

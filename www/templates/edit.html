@@ -1,0 +1,82 @@
+<ion-view view-title="Settings">
+<ion-content>
+  <form ng-submit="doLogin()">
+    <div class="list">
+      <div class="item item-divider">
+        Name
+      </div>
+      <label class="item item-input">
+        <span class="input-label">First name</span>
+        <input type="text" ng-model="user.name.value.fname">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Last name</span>
+        <input type="text" ng-model="user.name.value.lname">
+      </label>
+      <div class="item item-divider">
+        Address
+      </div>
+      <label class="item item-input">
+        <span class="input-label">Street</span>
+        <input type="text" ng-model="user.address.value.street">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Number</span>
+        <input type="text" ng-model="user.address.value.no">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Zip Code</span>
+        <input type="text" ng-model="user.address.value.zip">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">City</span>
+        <input type="text" ng-model="user.address.value.city">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Country</span>
+        <input type="text" ng-model="user.address.value.country">
+      </label>
+      <div class="item item-divider">
+        E-Mail
+      </div>
+      <label class="item item-input item-icon-left">
+        <span class="input-label"><i class="icon ion-email"></i></span>
+        <input type="email" ng-model="user.email.value">
+      </label>
+      <div class="item item-divider">
+        Telephone
+      </div>
+      <label class="item item-input item-icon-left">
+        <span class="input-label">
+          <i class="icon ion-ios-telephone"></i>
+        </span>
+        <input type="text" ng-model="user.tel.value">
+      </label>
+      <label class="item item-input item-icon-left">
+        <span class="input-label">
+          <i class="icon ion-android-phone-portrait"></i>
+        </span>
+        <input type="text" ng-model="user.mobile.value">
+      </label>
+      <div class="item item-divider">
+        Social
+      </div>
+      <label class="item item-input item-icon-left">
+        <span class="input-label"><i class="icon ion-social-twitter"></i></span>
+        <input type="text" ng-model="user.twitter.value">
+      </label>
+      <label class="item item-input item-icon-left">
+        <span class="input-label"><i class="icon ion-social-github"></i></span>
+        <input type="text" ng-model="user.github.value">
+      </label>
+      <label class="item item-input item-icon-left">
+        <span class="input-label"><i class="icon ion-social-reddit"></i></span>
+        <input type="text" ng-model="user.reddit.value">
+      </label>
+      <label class="item">
+        <button class="button button-block button-balanced button-outline" type="submit">Save</button>
+      </label>
+    </div>
+  </form>
+</ion-content>
+</ion-view>

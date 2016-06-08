@@ -1,0 +1,25 @@
+<ion-view view-title="Contact">
+
+<ion-content>
+      <div class="list">
+
+        <ion-refresher pulling-text="Pull to refresh..." on-refresh="main.getNewItems()">
+        </ion-refresher>
+      <ul class="list">
+        <li class="item item-thumbnail-left" ng-repeat="item in main.links track by $index">
+          <img ng-if="item.thumbnail.startsWith(&apos;http&apos;)" ng-src="{{item.thumbnail}}" alt="thumbnail">
+          <img ng-if="!item.thumbnail.startsWith(&apos;http&apos;)" ng-src="https://avatars1.githubusercontent.com/u/14248?v=3&amp;s=200" alt="thumbnail">
+          <a class="item-title" href="{{item.url}}" target="_blank">
+            <h2 class="item-title"><b>{{item.title}}</b></h2>
+          </a>
+          <p>
+            <a href="https://www.reddit.com/u/{{item.author}}" target="_blank">{{item.author}}</a>
+            <span am-time-ago="item.created_utc" am-preprocess="unix"></span>
+          </p>
+        </li>
+      </ul>
+      <ion-infinite-scroll on-infinite="main.getOlderItems()" distance="1%">
+      </ion-infinite-scroll>
+    </div>
+</ion-content>
+</ion-view>

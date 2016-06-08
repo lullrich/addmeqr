@@ -1,0 +1,78 @@
+<ion-view view-title="Contact">
+  <ion-content padding="true">
+
+    <div class="list card">
+      <div class="item item-divider">
+        Name
+      </div>
+      <div class="item item-avatar">
+        <img src="css/img/avatar.png">
+        <h2>{{contact.name.fname}}
+          {{contact.name.lname}}</h2>
+      </div>
+
+      <div class="item item-divider" ng-show="contact.address">
+        Address
+      </div>
+
+      <p class="item item-icon-left" ng-show="contact.address">
+        <i class="icon ion-home"></i>
+        {{contact.address.street}}
+        {{contact.address.no}}
+        <br>
+        {{contact.address.zip}}
+        {{contact.address.city}}
+        <br>
+        {{contact.address.country}}
+      </p>
+
+      <div class="item item-divider" ng-show="contact.phone || contact.mobile|| contact.email">
+        Phone &amp; Email
+      </div>
+
+      <div class="item item-icon-left" ng-show="contact.tel">
+        <i class="icon ion-ios-telephone"></i>
+        {{contact.tel}}
+        <span class="item-note">
+          Home
+        </span>
+
+      </div>
+
+      <div class="item item-icon-left" ng-show="contact.mobile">
+        <i class="icon ion-android-phone-portrait"></i>
+        {{contact.mobile}}
+        <span class="item-note">
+          Mobile
+        </span>
+
+      </div>
+
+      <div class="item item-icon-left" ng-show="contact.email">
+        <i class="icon ion-email"></i>
+        {{contact.email}}
+      </div>
+
+      <div class="item item-divider" ng-show="contact.twitter || contact.github|| contact.reddit">
+        Social
+      </div>
+
+      <div class="item item-icon-left" ng-show="contact.twitter">
+        <i class="icon ion-social-twitter calm"></i>
+        @{{contact.twitter}}
+
+      </div>
+
+      <div class="item item-icon-left" ng-show="contact.github">
+        <i class="icon ion-social-github"></i>
+        {{contact.github}}
+
+      </div>
+      <div class="item item-icon-left" ng-show="contact.reddit">
+        <i class="icon ion-social-reddit"></i>
+        {{contact.reddit}}
+      </div>
+
+    </div>
+  </ion-content>
+</ion-view>
