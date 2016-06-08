@@ -67,8 +67,8 @@ angular.module('addme.services', ['ngCordova', 'ngCordovaOauth', 'pouchdb'])
 })
 .service('Twitter', function($log, $ionicPlatform, $cordovaOauth) {
   var twitter = this;
-  var consumerKey = '9yRqmPAhPCC0AoXAv4Ix3Momn';
-  var consumerSecret = 'JseSSViyxfsR5IXEDfOL3W89L3wfFbI0kciPcR9pK9mRKKeauB';
+  var consumerKey = 'key';
+  var consumerSecret = 'secret';
   $ionicPlatform.ready(function() {
     twitter.auth = function () {
         return $cordovaOauth.twitter(consumerKey, consumerSecret);
@@ -77,8 +77,8 @@ angular.module('addme.services', ['ngCordova', 'ngCordovaOauth', 'pouchdb'])
 })
 .service('Github', function($log, $ionicPlatform, $cordovaOauth){
   var github = this;
-  var clientID = 'd13a00e0a4ebd7049104';
-  var clientSecret = '4be0bd0e1bbdc8570cb880dd2becbe6cccbe6543';
+  var clientID = 'key';
+  var clientSecret = 'secret';
   var scopes = ['user'];
   $ionicPlatform.ready(function() {
     github.auth = function () {
